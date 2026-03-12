@@ -21,10 +21,12 @@ jobs:
         python-version: '3.10'
         cache: 'pip' # Acelera la instalación de dependencias
 
-    - name: Instalar Ubuntu Packages
+    - name: Instalar Google Chrome
       run: |
+        wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
         sudo apt-get update
-        sudo apt-get install -y chromium-browser chromium-chromedriver
+        sudo apt-get install -y google-chrome-stable
 
     - name: Instalar dependencias de Python
       run: |

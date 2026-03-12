@@ -11,6 +11,8 @@ import os
 # --- CONFIGURACIÓN DEL NAVEGADOR ---
 opciones = Options()
 opciones.add_argument('--headless')  # Ejecuta Chrome de fondo, sin abrir la ventana visual
+opciones.add_argument('--no-sandbox')  # Necesario en entornos CI (GitHub Actions)
+opciones.add_argument('--disable-dev-shm-usage')  # Evita crashes por memoria compartida limitada en CI
 opciones.add_argument('--disable-gpu')
 opciones.add_argument('--log-level=3')  # Oculta mensajes molestos de la consola
 
