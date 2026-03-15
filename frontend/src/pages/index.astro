@@ -5,7 +5,7 @@ import HomeReact from '../components/Home/Home.jsx';
 // SSG: Fetch data at build time
 let rankingsData = {};
 try {
-    const res = await fetch('https://raw.githubusercontent.com/floatingbit23/MiniFootballLeague/main/frontend/public/elo_rankings.json');
+    const res = await fetch('https://raw.githubusercontent.com/minifootballleagueanalyzer/minifootballleagueanalyzer/main/frontend/public/elo_rankings.json');
     if (res.ok) {
         rankingsData = await res.json();
     }
